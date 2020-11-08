@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>cabrita.link</title>
+    <style media="screen">
+      @font-face {
+        font-family: 'Merriweather';
+        src: url('./fonts/Merriweather/Merriweather-Light.woff2') format('woff2'),
+        url('./fonts/Merriweather/Merriweather-Light.woff') format('woff');
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Merriweather';
+        src: url('./fonts/Merriweather/Merriweather-Bold.woff2') format('woff2'),
+        url('./fonts/Merriweather/Merriweather-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @keyframes blink {
+          0% { opacity: 0; }
+         50% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      * {
+        user-select: none;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+        background-color: #DDD;
+        color: #222;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 20vh 5vw;
+      }
+      header {
+        flex-shrink: 0;
+        padding: 2em 0;
+      }
+      h1 {
+        position: relative;
+        font-weight: 700;
+        font-size: 3em;
+        margin: 0;
+      }
+      h1:before {
+        content: 'bruno@';
+        position: absolute;
+        left: -72%;
+        opacity: 0;
+        transition: all 0.8s ease-out;
+      }
+      h1.show-contact:before {
+        opacity: 0.7;
+      }
+      p {
+        margin: 0;
+      }
+      section {
+
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      nav {
+        flex-shrink: 0;
+        padding: 2em 0;
+      }
+      nav > span,
+      nav > a {
+        display: inline-block;
+        padding: 0 1em;
+        transition: all 0.15s ease-out;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3 ease-out;
+      }
+      nav > span:hover,
+      nav > a:hover {
+        opacity: 0.3;
+      }
+
+      .blink {
+        animation: blink 1s steps(1) infinite;
+        font-weight: 700;
+        color: #000;
+      }
+      .logos {
+        max-width: 720px;
+        width: 100%;
+        text-align: center;
+      }
+      .logos p {
+        text-align: center;
+        padding-bottom: 1em;
+        color: #666;
+      }
+      .logos img {
+        height: 72px;
+        margin: 12px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>cabrita.link</h1>
+        <p>fullstack developer <span class="blink">_</span></p>
+      </header>
+      <section class="logos">
+        <!-- <p>stuff that I work with:</p> -->
+        <img src="./img/logos/html5.svg"        alt="HTML5"         title="HTML5">
+        <img src="./img/logos/css3.svg"         alt="CSS3"          title="CSS3">
+        <img src="./img/logos/javascript.svg"   alt="Javascript"    title="Javascript">
+        <img src="./img/logos/php.svg"          alt="PHP"           title="PHP">
+        <img src="./img/logos/mysql.svg"        alt="MySQL"         title="MySQL">
+        <img src="./img/logos/python.svg"       alt="Python"        title="Python">
+        <img src="./img/logos/raspberry-pi.svg" alt="Raspberry Pi"  title="Raspberry Pi">
+        <img src="./img/logos/nodejs.svg"       alt="Node.js"       title="Node.js">
+        <img src="./img/logos/sass.svg"         alt="Sass"          title="Sass">
+        <img src="./img/logos/jekyll.svg"       alt="Jekyll"        title="Jekyll">
+        <img src="./img/logos/vuejs.svg"        alt="Vue.js"        title="Vue.js">
+        <img src="./img/logos/angular.svg"      alt="Angular"       title="Angular">
+        <img src="./img/logos/laravel.svg"      alt="Laravel"       title="Laravel">
+        <img src="./img/logos/wordpress.svg"    alt="Wordpress"     title="Wordpress">
+        <img src="./img/logos/cordova.svg"      alt="Cordova"       title="Cordova">
+        <img src="./img/logos/ionic.svg"        alt="Ionic"         title="Ionic">
+        <img src="./img/logos/electron.svg"     alt="Electron"      title="Electron">
+        <img src="./img/logos/jquery.svg"       alt="jQuery"        title="jQuery">
+        <img src="./img/logos/bootstrap.svg"    alt="Bootstrap"     title="Bootstrap">
+      </section>
+      <nav>
+        <!-- <a href="#">Home</a> × -->
+        <span onclick="showContact()">Contact</span>
+      </nav>
+    </main>
+    <script type="text/javascript">
+      function showContact(){
+        var elem = document.getElementsByTagName('h1')[0];
+        elem.classList.add('show-contact');
+        setTimeout(function(){
+          elem.classList.remove('show-contact');
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>
